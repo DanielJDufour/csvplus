@@ -11,7 +11,7 @@ setup(
   packages = ['csvplus'],
   package_dir = {'csvplus': 'csvplus'},
   package_data = {'csvplus': ['__init__.py']},
-  version = '0.0.1',
+  version = '0.0.2',
   description = 'Create, Read, Update, Delete, and Move Rows in a CSV File',
   long_description = long_description,
   long_description_content_type='text/markdown',
