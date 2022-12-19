@@ -15,7 +15,7 @@ def _move_item(lst, from_index, to_index):
     item = lst.pop(from_index)
 
     if from_index < to_index:
-        lst.insert(to_index - 1, item)
+        lst.insert(to_index, item)
     else:
         lst.insert(to_index, item)
 
@@ -86,7 +86,6 @@ def move(filepath, from_row, to_row, debug_level=0, quoting=csv.QUOTE_ALL):
         writer.writerows(rows)
 
     return rows
-
 
 def update(filepath, where={}, data={}, debug_level=0, quoting=csv.QUOTE_ALL):
     if debug_level >= 1:

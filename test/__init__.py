@@ -39,9 +39,12 @@ class AddTests(BaseTestCase):
 
 class MoveTests(BaseTestCase):
     def test_move_item(self):
-        self.assertEqual(csvplus._move_item([1, 2, 3, 4], 1, 2), [1, 2, 3, 4])
-        self.assertEqual(csvplus._move_item([1, 2, 3, 4], 0, 2), [2, 1, 3, 4])
-        self.assertEqual(csvplus._move_item([1, 2, 3, 4], 3, 0), [4, 1, 2, 3])
+        self.assertEqual(csvplus._move_item([0, 1, 2, 3], 0, 1), [1, 0, 2, 3])
+        self.assertEqual(csvplus._move_item([0, 1, 2, 3], 1, 2), [0, 2, 1, 3])
+        self.assertEqual(csvplus._move_item([0, 1, 2, 3], 0, 2), [1, 2, 0, 3])
+        self.assertEqual(csvplus._move_item([0, 1, 2, 3], 2, 1), [0, 2, 1, 3])
+        self.assertEqual(csvplus._move_item([0, 1, 2, 3], 3, 2), [0, 1, 3, 2])
+        self.assertEqual(csvplus._move_item([0, 1, 2, 3], 3, 0), [3, 0, 1, 2])
 
     def test_move(self):
         rows = csvplus.move(test_file, 0, 4)
